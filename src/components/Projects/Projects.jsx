@@ -9,28 +9,28 @@ const projectData = [
   {
     title: "Fake News Detection using Machine Learning",
     description: "Applied machine learning algorithms (Passive Aggression, Decision Tree, Random Forest, Gradient Boosting) to detect fake news with optimized preprocessing, improving model accuracy by 15%. Classified news articles into fake or real categories, showcasing expertise in supervised learning.", // [cite: 12, 13]
-    imageUrl: "/project-fake-news.png", // In /public folder. Create this image.
+    imageUrl: "/portfolio/project-fake-news.png", // In /public folder. Create this image.
     tags: ["Machine Learning", "Python", "NLP", "Scikit-learn"],
     
   },
   {
     title: "Smooth Interview - AI-Powered Interview Assistant",
     description: "Developed a mobile application using Dart and Flutter integrated with Google's Gemini AI to conduct AI-driven mock interviews. The app dynamically generates personalized interview questions tailored specifically to users' resumes and target job descriptions, providing detailed, actionable feedback.", // [cite: 14, 15]
-    imageUrl: "/project-smooth-interview.png", // In /public folder. Create this image.
+    imageUrl: "/portfolio/project-smooth-interview.png", // In /public folder. Create this image.
     tags: ["Mobile App", "Dart", "Flutter", "Gemini AI", "Firebase"],
    
   },
   {
     title: "Women in Tech (WIT) Club Website",
     description: "Designed and built a responsive website using HTML, CSS, and Node.js, Express.js supported by MongoDB for data storage. Created user-friendly interfaces using Figma and implemented dynamic functionality to support club activities.", // [cite: 16, 17]
-    imageUrl: "/project-wit-website.png", // In /public folder. Create this image.
+    imageUrl: "/portfolio/project-wit-website.png", // In /public folder. Create this image.
     tags: ["Web Dev", "Node.js", "Express.js", "MongoDB", "Figma", "HTML", "CSS"],
     
   },
   {
     title: "Med Vista - Android App (Java)",
     description: "Developed a Java-based Android app leveraging Firebase Realtime Database to manage over 500 medical records with sub-100 ms retrieval. Integrated a medical-news REST API delivering 20+ weekly articles and built MPAndroidChart visualizations for calorie and sleep tracking, which boosted feature engagement by 30%.", // [cite: 18, 19]
-    imageUrl: "/project-med-vista.png", // In /public folder. Create this image.
+    imageUrl: "/portfolio/project-med-vista.png", // In /public folder. Create this image.
     tags: ["Android", "Java", "Firebase", "REST API", "MPAndroidChart"],
    
   }
