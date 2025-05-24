@@ -98,7 +98,7 @@
 
 @media screen and (max-width: 960px) {
   .navMenu {
-    display: none;
+    display: none !important; /* Always hidden by default */
     flex-direction: column;
     width: 100%;
     height: calc(100vh - 80px);
@@ -111,7 +111,7 @@
   }
 
   .navMenu.active {
-    display: flex;
+    display: flex !important; /* Only show when .active is present */
     z-index: 1;
   }
 
