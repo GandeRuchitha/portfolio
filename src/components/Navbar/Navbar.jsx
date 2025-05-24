@@ -1,7 +1,6 @@
-// src/components/Navbar/Navbar.jsx
 import React, { useState, useEffect } from 'react';
-import { Link as ScrollLink } from 'react-scroll'; // Renamed to ScrollLink to avoid conflict if using React Router's Link
-import { motion } from 'framer-motion'; // Added for animations
+import { Link as ScrollLink } from 'react-scroll';
+import { motion } from 'framer-motion';
 import styles from './Navbar.module.css';
 import { FiMenu, FiX } from 'react-icons/fi';
 
@@ -27,7 +26,7 @@ const Navbar = () => {
   }, []);
 
   const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
+    setMobileMenuOpen(prev => !prev);
   };
 
   const closeMobileMenu = () => {
@@ -37,9 +36,9 @@ const Navbar = () => {
   return (
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.navContainer}>
-        <ScrollLink // Using ScrollLink here for the logo as well for consistency
+        <ScrollLink
           to="home"
-          smooth={true}
+          smooth
           duration={500}
           offset={-80}
           className={styles.navLogo}
@@ -47,22 +46,30 @@ const Navbar = () => {
         >
           Ruchitha G.
         </ScrollLink>
+
         <div className={styles.menuIcon} onClick={toggleMobileMenu}>
           {mobileMenuOpen ? <FiX /> : <FiMenu />}
         </div>
-        <ul className={`${styles.navMenu} ${mobileMenuOpen ? styles.active : ''}`}>
-          {navLinks.map((linkInfo) => ( // Renamed 'link' to 'linkInfo' to avoid confusion with ScrollLink component
-            <motion.li // Wrapped li with motion.li for hover animation
+
+        <ul
+          className={
+            mobileMenuOpen
+              ? `${styles.navMenu} ${styles.navMenuOpen}`
+              : styles.navMenu
+          }
+        >
+          {navLinks.map(linkInfo => (
+            <motion.li
               key={linkInfo.id}
               className={styles.navItem}
-              whileHover={{ y: -4 }} // Move up slightly on hover
-              transition={{ type: "spring", stiffness: 300, damping: 10 }} // Spring physics for the hover
+              whileHover={{ y: -4 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 10 }}
             >
               <ScrollLink
                 to={linkInfo.id}
-                spy={true}
-                smooth={true}
-                offset={-80} // Adjust offset based on your navbar height
+                spy
+                smooth
+                offset={-80}
                 duration={500}
                 className={styles.navLink}
                 activeClass={styles.activeLink}
