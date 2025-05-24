@@ -1,0 +1,157 @@
+/* src/components/Hero/Hero.module.css */
+.hero {
+  display: flex;
+  flex-direction: column; /* Stack content and image if used */
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Full viewport height */
+  background: linear-gradient(135deg, var(--primary-color) 0%, #005f73 100%);
+  color: var(--light-text-color);
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before, .hero::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05); /* Subtle shapes */
+  animation: float 20s infinite ease-in-out alternate; /* Slower, alternating animation */
+  opacity: 0.7;
+}
+.hero::before {
+  width: 250px; /* Slightly larger */
+  height: 250px;
+  bottom: 5%;
+  left: 10%;
+  animation-duration: 22s; /* Different durations for variety */
+}
+.hero::after {
+  width: 150px; /* Smaller accent shape */
+  height: 150px;
+  top: 10%;
+  right: 12%;
+  animation-duration: 18s;
+  animation-delay: 3s;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+  100% { transform: translateY(-40px) translateX(20px) rotate(15deg); }
+}
+
+
+.heroContent {
+  z-index: 1;
+  max-width: 800px;
+  margin-bottom: 2rem; /* Add space if image is below */
+}
+
+.name {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--light-text-color);
+  letter-spacing: 1px;
+}
+
+.name span {
+  display: inline-block; /* For letter animation */
+}
+
+.tagline {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.9); /* Brighter for better readability */
+  font-weight: 300;
+}
+
+.socialLinks {
+  margin-bottom: 2rem;
+}
+
+.socialLinks a {
+  color: var(--light-text-color);
+  font-size: 1.8rem;
+  margin: 0 0.75rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.socialLinks a:hover {
+  color: var(--accent-color);
+  transform: translateY(-3px) scale(1.1); /* More noticeable hover */
+}
+
+.ctaButton {
+  background-color: var(--accent-color);
+  color: var(--light-text-color);
+  padding: 0.9rem 2.2rem; /* Slightly larger */
+  border-radius: 50px; /* Pill shape */
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.ctaButton:hover {
+  background-color: #ff6347; /* Brighter coral on hover */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(var(--accent-color), 0.4);
+}
+
+.heroImageContainer {
+  margin-top: 2rem; /* Space above image if used */
+  z-index: 1;
+}
+
+.heroImage {
+  width: 200px; /* Adjust size as needed */
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid var(--accent-color);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+
+@media (min-width: 768px) {
+  .hero {
+      flex-direction: row; /* Side by side for larger screens if image is used */
+      justify-content: space-around; /* Example layout */
+  }
+  .heroContent {
+      text-align: left; /* Align text left on larger screens */
+      margin-bottom: 0;
+      margin-right: 2rem; /* Space between text and image */
+  }
+  .name {
+    font-size: 4.2rem; /* Larger font */
+  }
+  .tagline {
+    font-size: 1.7rem;
+  }
+   .socialLinks {
+      justify-content: flex-start; /* Align icons to the left */
+   }
+   .heroImageContainer {
+      margin-top: 0;
+   }
+}
+
+@media (max-width: 767px) { /* Ensure image is reasonably sized on mobile if used */
+    .heroImage {
+        width: 150px;
+        height: 150px;
+    }
+    .name {
+      font-size: 2.5rem;
+    }
+    .tagline {
+      font-size: 1.3rem;
+    }
+}

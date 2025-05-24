@@ -1,0 +1,29 @@
+/* Glass-panel wrapper for each section */
+.sectionWrapper {
+  position: relative;
+  margin: 4rem auto;
+  padding: 3rem 2rem;
+  max-width: 1000px;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure internal cards (like your white About/Experience cards) stay opaque */
+.sectionWrapper > * {
+  background: transparent !important;
+}
+
+/* Optional: alternate transparency on even sections for subtle variation */
+.sectionWrapper:nth-of-type(even) {
+  background: rgba(255, 255, 255, 0.10);
+}
+
+/* Hero stays full-bleed; Footer you can style normally */
+#home {
+  position: relative;
+  overflow: hidden;
+}

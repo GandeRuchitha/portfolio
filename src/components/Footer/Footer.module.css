@@ -1,0 +1,39 @@
+/* src/components/Footer/Footer.module.css */
+.footer {
+  background-color: var(--primary-color);
+  color: rgba(255, 255, 255, 0.75); /* Slightly more opaque text */
+  padding: 40px 20px; /* More padding */
+  text-align: center;
+}
+
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.socialLinks {
+  margin-bottom: 20px; /* More space */
+}
+
+.socialLinks a {
+  color: rgba(255, 255, 255, 0.8); /* Brighter icons */
+  font-size: 1.8rem; /* Larger icons */
+  margin: 0 12px; /* More space between icons */
+  transition: color 0.3s ease, transform 0.3s ease; /* Added transform */
+}
+
+.socialLinks a:hover {
+  color: var(--accent-color);
+  /* transform: translateY(-3px); /* Handled by Framer Motion */
+}
+
+.copyright {
+  font-size: 0.95rem; /* Slightly larger */
+  margin-bottom: 8px; /* More space */
+}
+
+.madeWith {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.6); /* Subtler color */
+}

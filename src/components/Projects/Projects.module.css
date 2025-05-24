@@ -1,0 +1,131 @@
+/* src/components/Projects/Projects.module.css */
+.projects {
+  background-color: var(--background-color); /* Or var(--secondary-color) for contrast */
+}
+
+.projectGrid {
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); */
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); /* Slightly wider min for cards */
+  gap: 35px; /* Increased gap */
+  max-width: 1200px; /* Wider max grid */
+  margin: 0 auto;
+}
+
+.card {
+  background-color: var(--secondary-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  /* transition: transform 0.3s ease, box-shadow 0.3s ease; */ /* Handled by Framer Motion */
+}
+
+.imageContainer {
+  width: 100%;
+  height: 230px; /* Slightly taller image area */
+  overflow: hidden;
+  background-color: #e0e0e0; /* Placeholder bg for image loading */
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease-out; /* Smoother transform */
+}
+
+.card:hover .cardImage {
+  transform: scale(1.07); /* Slightly more zoom */
+}
+
+.cardContent {
+  padding: 20px 25px; /* Adjusted padding */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardTitle {
+  font-size: 1.6rem; /* Larger title */
+  color: var(--primary-color);
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.cardDescription {
+  font-size: 0.95rem; /* Slightly larger description */
+  line-height: 1.7;
+  color: var(--text-color);
+  margin-bottom: 18px;
+  flex-grow: 1;
+}
+
+.cardTags {
+  margin-bottom: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  background-color: var(--primary-color-xlight, #e0f2f7); /* Very light primary variant */
+  color: var(--primary-color);
+  padding: 5px 12px; /* Adjusted padding */
+  border-radius: 15px;
+  font-size: 0.8rem; /* Slightly larger tag text */
+  font-weight: 500;
+  border: 1px solid var(--primary-color-light, #b3dce6); /* Subtle border */
+}
+
+.cardLinks {
+  display: flex;
+  gap: 12px;
+  margin-top: auto; /* Pushes links to the bottom */
+  align-items: center; /* Align buttons if text length varies */
+}
+
+.linkButton {
+  background-color: var(--accent-color);
+  color: white;
+  padding: 9px 18px; /* Adjusted padding */
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  /* transition: background-color 0.3s ease; */ /* Handled by Framer Motion */
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: none; /* Ensure no default border */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.linkButton.repoButton {
+  background-color: var(--primary-color); /* Different color for repo button */
+}
+.linkButton.repoButton:hover {
+  background-color: #083b50; /* Darken primary */
+}
+
+.linkButton:hover {
+  background-color: #e66a3e; /* Darken accent */
+}
+
+.linkButton svg {
+  font-size: 1.1rem; /* Slightly larger icons */
+}
+
+@media (max-width: 400px) {
+    .projectGrid {
+        grid-template-columns: 1fr;
+    }
+    .cardTitle {
+      font-size: 1.4rem;
+    }
+    .cardDescription {
+      font-size: 0.9rem;
+    }
+}

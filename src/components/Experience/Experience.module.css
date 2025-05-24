@@ -1,0 +1,129 @@
+/* src/components/Experience/Experience.module.css */
+.experience {
+  background-color: var(--background-color);
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 30px auto; /* Added top margin */
+  padding: 20px 0;
+}
+
+.timeline::before { /* The central line of the timeline */
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: var(--primary-color-light, #dbe9ee); /* Lighter shade of primary or a neutral */
+  border-radius: 2px;
+}
+
+.timelineItem {
+  position: relative;
+  margin-bottom: 50px; /* Increased spacing */
+  padding-left: 60px; /* Space for icon and line */
+}
+
+.timelineItem:last-child {
+  margin-bottom: 0;
+}
+
+.timelineIcon {
+  position: absolute;
+  left: 22px; /* Aligned with the line carefully */
+  top: 0;
+  transform: translateX(-50%); /* Center icon on the line */
+  background-color: var(--accent-color);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10; /* Ensure icon is above line */
+  box-shadow: 0 0 0 4px var(--background-color); /* Creates a "cutout" effect from line */
+}
+
+.timelineContent {
+  background-color: var(--secondary-color);
+  padding: 25px; /* More padding */
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  position: relative; /* For potential arrow, not used here but good practice */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.timelineContent:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+
+.timelineContent h3 {
+  margin-top: 0;
+  color: var(--primary-color);
+  font-size: 1.5rem; /* Larger role title */
+  margin-bottom: 5px;
+}
+
+.company {
+  font-weight: 600; /* Bolder company */
+  color: var(--primary-color);
+  margin-bottom: 8px; /* More space */
+  font-size: 1.05rem;
+}
+
+.duration {
+  display: block;
+  font-size: 0.9rem;
+  color: #555; /* Darker gray */
+  margin-bottom: 15px; /* More space */
+  font-style: italic;
+}
+
+.timelineContent ul {
+  list-style-type: none; /* Remove default bullets */
+  padding-left: 0;
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.8; /* More line height */
+}
+
+.timelineContent ul li {
+  margin-bottom: 10px; /* More space between points */
+  position: relative;
+  padding-left: 20px; /* Space for custom bullet */
+}
+.timelineContent ul li::before {
+  content: '▹'; /* Custom bullet point */
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent-color);
+  font-weight: bold;
+}
+.timelineContent ul li:last-child {
+  margin-bottom: 0;
+}
+
+
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 20px;
+  }
+  .timelineItem {
+    padding-left: 50px;
+  }
+  .timelineIcon {
+    left: 20px;
+  }
+  .timelineContent h3 {
+    font-size: 1.3rem;
+  }
+  .company {
+    font-size: 1rem;
+  }
+}

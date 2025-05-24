@@ -1,0 +1,125 @@
+/* src/components/Contact/Contact.module.css */
+.contact {
+  background-color: var(--secondary-color);
+  text-align: center;
+}
+
+.contactContent {
+  max-width: 750px; /* Slightly wider */
+  margin: 0 auto;
+}
+
+.invitation {
+  font-size: 1.15rem; /* Slightly larger */
+  line-height: 1.8;
+  margin-bottom: 35px; /* More space */
+  color: var(--text-color);
+}
+
+.contactDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 40px; /* More space */
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* More gap */
+  font-size: 1.1rem;
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 12px 20px; /* More padding */
+  border-radius: var(--border-radius);
+  background-color: var(--background-color);
+  box-shadow: var(--box-shadow);
+  width: auto; /* Auto width based on content */
+  min-width: 300px; /* Minimum width for consistency */
+  max-width: 90%;
+  justify-content: flex-start; /* Align items to the start */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.contactItem:hover {
+  /* Hover handled by Framer Motion, but can add fallback */
+  background-color: var(--primary-color-xlight, #e0f2f7);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  color: var(--primary-color);
+}
+.contactItem:hover .icon {
+  color: var(--accent-color);
+}
+
+
+.contactItem .icon {
+  color: var(--primary-color);
+  font-size: 1.6rem; /* Larger icon */
+  transition: color 0.3s ease;
+}
+
+/* Contact Form Styles */
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* More gap */
+  background-color: var(--background-color);
+  padding: 30px 35px; /* More padding */
+  border-radius: var(--border-radius);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08); /* Softer shadow */
+  text-align: left;
+}
+
+.contactForm input,
+.contactForm textarea {
+  width: 100%;
+  padding: 14px; /* More padding */
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  box-sizing: border-box;
+  background-color: var(--secondary-color); /* Light bg for inputs */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.contactForm input:focus,
+.contactForm textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  /* box-shadow is handled by framer motion whileFocus */
+}
+
+
+.contactForm textarea {
+  resize: vertical;
+  min-height: 120px; /* Min height */
+}
+
+.submitButton {
+  background-color: var(--accent-color);
+  color: white;
+  padding: 14px 25px; /* More padding */
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1.05rem; /* Slightly larger */
+  font-weight: 600;
+  cursor: pointer;
+  /* transition: background-color 0.3s ease; */ /* Handled by Framer Motion */
+  box-shadow: 0 3px 8px rgba(var(--accent-color),0.3);
+}
+
+
+@media (max-width: 600px) {
+    .contactItem {
+        width: 100%;
+        min-width: unset;
+        justify-content: center; /* Center on mobile if preferred */
+        padding: 12px 15px;
+    }
+    .contactItem span {
+      font-size: 1rem; /* Adjust for smaller screens */
+    }
+    .contactForm {
+      padding: 25px;
+    }
+}

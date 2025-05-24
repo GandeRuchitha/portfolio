@@ -1,0 +1,74 @@
+/* src/components/Skills/Skills.module.css */
+.skills {
+  background-color: var(--secondary-color);
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusted minmax for better fit */
+  gap: 25px; /* Slightly reduced gap */
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.skillCategory {
+  background-color: var(--background-color);
+  padding: 25px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.skillCategory:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.skillCategory h3 {
+  color: var(--primary-color);
+  margin-top: 0;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 10px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+/* Renamed from .skillBarContainer to .skillItemContainer */
+.skillItemContainer {
+  margin-bottom: 12px; /* Space between skill items */
+  padding: 8px 12px; /* Add some padding to each skill item */
+  border-radius: var(--border-radius-small, 4px); /* Optional: slight rounding */
+  background-color: var(--secondary-color-light, #f8f9fa); /* Light background for each item */
+  display: flex; /* To align icon and name */
+  align-items: center; /* Vertically align icon and name */
+  transition: background-color 0.3s ease;
+}
+.skillItemContainer:hover {
+    background-color: var(--primary-color-xlight, #e0f2f7);
+}
+
+.skillItemContainer:last-child {
+  margin-bottom: 0;
+}
+
+.skillInfo { /* This class is still used within skillItemContainer */
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  color: var(--text-color);
+  width: 100%; /* Take full width of the container */
+}
+
+.skillIcon {
+  margin-right: 10px;
+  color: var(--primary-color);
+  font-size: 1.3rem; /* Adjusted icon size */
+  flex-shrink: 0;
+}
+
+.skillName {
+  font-size: 0.95rem; /* Adjusted name size */
+  flex-grow: 1;
+}
+
+/* Removed .skillLevel, .progressBar, and .progress styles as they are no longer used */
