@@ -98,23 +98,20 @@
 
 @media screen and (max-width: 960px) {
   .navMenu {
-    display: flex;
+    display: none;
     flex-direction: column;
     width: 100%;
-    height: calc(100vh - 80px); /* Full height minus navbar */
+    height: calc(100vh - 80px);
     position: absolute;
-    top: 80px; /* Below navbar */
-    left: -100%;
-    opacity: 1;
-    transition: all 0.5s ease;
+    top: 80px;
+    left: 0;
     background: var(--background-color);
     padding-top: 2rem;
+    transition: all 0.5s ease;
   }
 
   .navMenu.active {
-    left: 0;
-    opacity: 1;
-    transition: all 0.5s ease;
+    display: flex;
     z-index: 1;
   }
 
@@ -128,18 +125,17 @@
     padding: 1.5rem;
     width: 100%;
     display: table;
-    color: var(--text-color); /* Ensure links are visible on mobile menu bg */
-     border-bottom: none; /* No border on mobile menu items */
+    color: var(--text-color);
+    border-bottom: none;
   }
-  .navbar:not(.scrolled) .navLink { /* Override for mobile menu when not scrolled */
-      color: var(--text-color);
+  .navbar:not(.scrolled) .navLink {
+    color: var(--text-color);
   }
-
 
   .navLink:hover,
   .navLink.activeLink {
     color: var(--accent-color);
-    border-bottom: none; /* No border on mobile, just color change */
+    border-bottom: none;
   }
 
   .menuIcon {
