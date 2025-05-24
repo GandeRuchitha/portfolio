@@ -98,21 +98,23 @@
 
 @media screen and (max-width: 960px) {
   .navMenu {
-    display: none !important; /* Always hidden by default */
+    display: none !important;
     flex-direction: column;
-    width: 100%;
-    height: calc(100vh - 80px);
-    position: absolute;
-    top: 80px;
+    width: 100vw; /* Use full viewport width */
+    height: 100vh; /* Cover the whole viewport */
+    position: fixed; /* Overlay the whole screen */
+    top: 0;
     left: 0;
     background: var(--background-color);
-    padding-top: 2rem;
+    padding-top: 100px; /* Space for navbar, adjust as needed */
+    margin: 0; /* Remove any margin */
+    box-sizing: border-box;
     transition: all 0.5s ease;
   }
 
   .navMenu.active {
-    display: flex !important; /* Only show when .active is present */
-    z-index: 1;
+    display: flex !important;
+    z-index: 1000;
   }
 
   .navItem {
